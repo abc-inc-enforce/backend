@@ -15,10 +15,7 @@ public class MenuService {
     }
 
     public Menu addMenu(String name, String description, double price) {
-        Menu menu = new Menu();
-        menu.setName(name);
-        menu.setDescription(description);
-        menu.setPrice(price);
+        Menu menu = new Menu( name,  description,  price);
         return menuRepository.save(menu);
     }
 
