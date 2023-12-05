@@ -35,4 +35,8 @@ public class MenuService {
     public List<Menu> getAllMenus() {
         return menuRepository.findAll();
     }
+
+    public Menu getMenuById(Long id) {
+        return menuRepository.findById(id);
+    }
 }
