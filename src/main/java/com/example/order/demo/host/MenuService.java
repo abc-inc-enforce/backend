@@ -14,18 +14,16 @@ public class MenuService {
         this.menuRepository = menuRepository;
     }
 
-    public Menu addMenu(String name, String description, double price) {
-        Menu menu = new Menu( name,  description,  price);
+    public Menu addMenu(String name, double price) {
+        Menu menu = new Menu( name,  price);
         return menuRepository.save(menu);
     }
 
-    public Menu updateMenu(Long id, String name, String description, double price) {
-        Menu existingMenu = menuRepository.findById(id);
-        if (existingMenu != null) {
-            existingMenu.updateMenu(name, description, price);
-            return menuRepository.save(existingMenu);
-        }
-        return null; // 혹은 예외 처리
+    public Menu updateMenu(Long id, String name, double price) {
+        Menu existingMenu = menuRepository.findById(id)
+                .orElseThrow();
+        existingMenu.updateMenu(name, price);
+        return menuRepository.save(existingMenu);
     }
 
     public void deleteMenu(Long id) {
@@ -37,6 +35,7 @@ public class MenuService {
     }
 
     public Menu getMenuById(Long id) {
-        return menuRepository.findById(id);
+        return menuRepository.findById(id)
+                .orElseThrow();
     }
 }

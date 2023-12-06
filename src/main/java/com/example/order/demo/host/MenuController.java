@@ -15,8 +15,6 @@ public class MenuController {
     public MenuController(MenuService menuService) {
         this.menuService = menuService;
     }
-
-    // 모든 메뉴 조회
     @GetMapping
     public List<Menu> getAllMenus() {
         return menuService.getAllMenus();
@@ -31,13 +29,13 @@ public class MenuController {
     // 메뉴 추가
     @PostMapping
     public Menu addMenu(@RequestBody MenuRequest menuRequest) {
-        return menuService.addMenu(menuRequest.getName(), menuRequest.getDescription(), menuRequest.getPrice());
+        return menuService.addMenu(menuRequest.getName(), menuRequest.getPrice());
     }
 
     // 메뉴 수정
     @PutMapping("/{id}")
     public Menu updateMenu(@PathVariable Long id, @RequestBody MenuRequest menuRequest) {
-        return menuService.updateMenu(id, menuRequest.getName(), menuRequest.getDescription(), menuRequest.getPrice());
+        return menuService.updateMenu(id, menuRequest.getName(), menuRequest.getPrice());
     }
 
     // 메뉴 삭제
