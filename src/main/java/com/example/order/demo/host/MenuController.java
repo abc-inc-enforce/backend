@@ -29,13 +29,13 @@ public class MenuController {
     // 메뉴 추가
     @PostMapping
     public Menu addMenu(@RequestBody MenuRequest menuRequest) {
-        return menuService.addMenu(menuRequest.getName(), menuRequest.getPrice());
+        return menuService.addMenu(menuRequest.getImg(), menuRequest.getName(), menuRequest.getCategory(), menuRequest.getPrice());
     }
 
     // 메뉴 수정
     @PutMapping("/{id}")
     public Menu updateMenu(@PathVariable Long id, @RequestBody MenuRequest menuRequest) {
-        return menuService.updateMenu(id, menuRequest.getName(), menuRequest.getPrice());
+        return menuService.updateMenu(id, menuRequest.getImg(), menuRequest.getName(), menuRequest.getCategory(), menuRequest.getPrice());
     }
 
     // 메뉴 삭제

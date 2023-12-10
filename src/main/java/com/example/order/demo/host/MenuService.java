@@ -14,15 +14,15 @@ public class MenuService {
         this.menuRepository = menuRepository;
     }
 
-    public Menu addMenu(String name, double price) {
-        Menu menu = new Menu( name,  price);
+    public Menu addMenu(String img, String name, String category, double price) {
+        Menu menu = new Menu( img, name,  category, price);
         return menuRepository.save(menu);
     }
 
-    public Menu updateMenu(Long id, String name, double price) {
+    public Menu updateMenu(Long id, String img, String name, String category, double price) {
         Menu existingMenu = menuRepository.findById(id)
                 .orElseThrow();
-        existingMenu.updateMenu(name, price);
+        existingMenu.updateMenu(img, name, category, price);
         return menuRepository.save(existingMenu);
     }
 

@@ -19,14 +19,24 @@ public class Menu {
     private String name;
 
     @Column
+    private String img;
+
+    @Column
+    private String category;
+
+    @Column
     private double price;
 
-    public void updateMenu(String name , double price) {
+    public void updateMenu(String img, String name ,String category, double price) {
+        this.img = img;
         this.name = name;
+        this.category = category;
         this.price = price;
     }
-    public Menu(String name, double price) {
+    public Menu(String img, String name, String category, double price) {
+        this.img = img;
         this.name = name;
+        this.category = category;
         this.price = price;
     }
 
