@@ -1,5 +1,6 @@
 package com.example.order.demo.host;
 
+import com.example.order.demo.host.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -7,7 +8,6 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +15,7 @@ import java.util.Set;
 // OrderController.java
 
 @Controller
-public class OrderController {
+public class TableController {
 
     private Set<String> tableSet = new HashSet<>(); // 테이블 번호를 저장할 Set
 

@@ -1,5 +1,7 @@
 package com.example.order.demo.host;
 
+import com.example.order.demo.host.Menu;
+import com.example.order.demo.host.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

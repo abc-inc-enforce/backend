@@ -1,5 +1,6 @@
 package com.example.order.demo.host;
 
+import com.example.order.demo.host.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
