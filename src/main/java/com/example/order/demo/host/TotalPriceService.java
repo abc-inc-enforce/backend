@@ -1,5 +1,6 @@
 package com.example.order.demo.host;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,10 @@ public class TotalPriceService {
     public List<TotalPrice> getTotalPriceAllByTableNum(Long tableNum) {
         List<TotalPrice> totalPrice = totalPriceRepository.findAllByTableNum(tableNum);
         return totalPrice != null ? totalPrice : Collections.emptyList();
+    }
+
+    @Transactional
+    public void deleteTotalPrice(Long tableNum) {
+        totalPriceRepository.deleteAllByTableNum(tableNum);
     }
 }
